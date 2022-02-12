@@ -1,4 +1,4 @@
-# Problem Solving
+# ProblemSolving
 I started problem solving according the roadmap in this [sheet](https://docs.google.com/spreadsheets/d/1iJZWP2nS_OB3kCTjq8L6TrJJ4o-5lhxDOyTaocSYc-k/edit#gid=84654839), However from level 3 I started to diverge a little bit from it and solve problems from leetcode, so I am now documenting my solutions in this repo.
 
 In the folders you will find the problems I solved from leetcode and also the problems from the sheet as I plane ISA to complete thel whole roadmap.
