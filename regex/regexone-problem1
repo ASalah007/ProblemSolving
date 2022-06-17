@@ -1,0 +1,3 @@
+matching decimal point numbers:
+
+answer = ^[+-]?\d*((,\d*)*(\.\d+)?(e\d+)?)$
