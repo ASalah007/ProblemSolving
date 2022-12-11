@@ -22,13 +22,11 @@ public:
       int m1 = maxPathSum2(root->left, false);
       int m2 = maxPathSum2(root->right, false);
       
-      ans = max(root->val, root->val + max(m1, m2));
+      int ans = max(root->val, root->val + max(m1, m2));
 
       
       mx = max(mx, root->val + m1 + m2);
       mx = max(mx, ans);
-      mx = max(mx, m1);
-      mx = max(mx, m2);
 
       return ans;
     }
