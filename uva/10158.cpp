@@ -39,7 +39,7 @@ class War {
     int x = find(a);
     int y = find(b);
 
-    set<int> *s1, *s2;
+    set<int> *s2;
 
     if (r[x] > r[y]) {
       p[y] = x;
@@ -50,9 +50,9 @@ class War {
       if (r[x] == r[y]) r[y]++;
     }
 
-    for (int i : *s2) {
-      set_enemies(x, i);
-    }
+    // your enemeies are my enemies
+    // and your enemeis are just one set
+    if (!s2->empty()) set_enemies(x, *(s2->begin()));
   }
 
   void set_enemies(int a, int b) {
@@ -68,18 +68,18 @@ class War {
 
     set<int> &s1 = e[x], &s2 = e[y];
 
-    for (int i : s1) {
-      set_friends(y, i);
-    }
-    for (int i : s2) {
-      set_friends(x, i);
-    }
+    // your enemies are my friends
+    // all of your enemies are just one big set of friends
+    if (!s1.empty()) set_friends(y, *(s1.begin()));
+    if (!s2.empty()) set_friends(x, *(s2.begin()));
+
     s1.insert(y);
     s2.insert(x);
   }
 };
 
 int main() {
+  // freopen("in.txt", "r", stdin);
   int n;
   cin >> n;
   War *w = new War(n);
@@ -94,10 +94,10 @@ int main() {
         w->set_enemies(x, y);
         break;
       case 3:
-        cout << w->is_friends(x, y) << endl;
+        cout << w->is_friends(x, y) << "\n";
         break;
       case 4:
-        cout << w->is_enemies(x, y) << endl;
+        cout << w->is_enemies(x, y) << "\n";
         break;
     }
   }
